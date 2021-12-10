@@ -1,0 +1,22 @@
+#!groovy
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent {
+        label 'dev'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        tomestamps()
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install' 
+                // archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                sh 'npm run build'
+            }
+        }
+    }
+}
