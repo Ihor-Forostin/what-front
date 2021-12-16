@@ -15,9 +15,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Hello"
-                sh 'node -v'
-                sh 'npm -v'
-//              sh 'npm install' 
+                sh 'npm install' 
+                
                 // archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
 //                 sh 'npm run build'
             }
