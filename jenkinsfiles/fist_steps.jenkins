@@ -9,7 +9,7 @@ pipeline {
         sh 'npm config ls'
         sh 'npm install'
         sh 'npm audit fix --force'
-        sh 'npm run dev'
+        sh 'npm run build'
       }
     }
   }
