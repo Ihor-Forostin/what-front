@@ -4,13 +4,13 @@ pipeline {
   tools {nodejs "node"}
  
   stages {
-    stage('Create docker inmage')
+    stage('Create docker inmage'){
       steps{
         echo "Start building docker image"
         dir ('Docker/toolbox'){
-                sh'docker build .'}
-      
+            sh'docker build .'}
       }
+    }
     stage('Build') {
       steps {
         sh 'npm config ls'
