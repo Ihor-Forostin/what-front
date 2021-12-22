@@ -8,6 +8,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm config ls'
+        sh 'npm install -g node-gyp'
         sh 'npm install'
         sh 'npm audit fix --force'
         sh 'npm run build'
