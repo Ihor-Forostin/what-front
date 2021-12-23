@@ -19,7 +19,7 @@ pipeline {
   }
  post {
         always {
-            mail to: xiaomibestuser@gmail.com, subject: ‘The Pipeline ended‘
+            mail to: xiaomibestuser@gmail.com, subject: 'The Pipeline ended'
         }
     }
 
