@@ -1,6 +1,10 @@
 pipeline {
   agent any
   tools {nodejs "node"}
+  options{
+    BuildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    timestamps()
+  }
   stages {
     stage('Build') {
       steps {
