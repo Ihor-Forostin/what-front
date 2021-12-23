@@ -10,10 +10,5 @@ pipeline {
       }
     }
   }
-  post {
-    failure {
-      mail to: xiaomibestuser@gmail.com, subject: ‘The Pipeline failed :(‘
-      }
-  
-  }
+
 }
