@@ -3,6 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        emailext body: 'Test Message',
+        subject: 'Test Subject',
+        to: 'xiaomibestuser@gmail.com'
         sh 'npm config ls'
         sh 'npm install -g node-gyp'
         sh 'npm config set msvs_version 2017'
