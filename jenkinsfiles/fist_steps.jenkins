@@ -1,15 +1,9 @@
 pipeline {
   agent any
- 
-  tools {nodejs "node"}
- 
   stages {
-   
     stage('Build') {
       steps {
         sh 'npm config ls'
-        sh 'npm install -g node-gyp'
-        sh 'npm config set msvs_version 2017'
         sh 'npm install'
         sh 'npm audit fix --force'
         sh 'npm run build'
@@ -18,7 +12,8 @@ pipeline {
   }
   post {
     failure {
-      mail to: xiaomibestuser@gmail.com, subject: ‘The Pipeline failed ‘
-    }
+      mail to: xiaomibestuser@gmail.com, subject: ‘The Pipeline failed :(‘
+      }
+  
   }
 }
