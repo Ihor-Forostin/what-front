@@ -10,6 +10,8 @@ pipeline {
         sh 'npm install --global node-gyp'
         sh 'npm install --global cross-env'
         sh 'npm run build'
+        sh 'node -v'
+        sh 'npm -v'
         
     
       
