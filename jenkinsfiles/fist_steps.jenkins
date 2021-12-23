@@ -9,14 +9,12 @@ pipeline {
         sh 'npm install'
         sh 'npm audit fix --force'
         sh 'npm run build'
+        emailext body: 'Test Message',
+        subject: 'Test Subject',
+        to: 'xiaomibestuser@gmail.com'
       }
     }
   }
-  post {
-    failure {
-      mail to: xiaomibestuser@gmail.com, subject: ‘The Pipeline failed :(‘
-      }
-  
-  }
+
 
 }
