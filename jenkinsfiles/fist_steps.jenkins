@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  tools {nodejs "node"}
+  tools {
+  nodejs "node"
+  SonarScanner "SonarScanner"
+  }
   options{
     buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
     timestamps()
